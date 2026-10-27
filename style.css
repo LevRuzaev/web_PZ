@@ -1,0 +1,237 @@
+body {
+  padding: 0 30px;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: "Arial", sans-serif;
+  color: #222222;
+  background: #f5f7fb;
+  background-image: linear-gradient(180deg, #eef2f9 0%, #f9fafc 300px, #ffffff 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1 { font-size: 24px; line-height: normal; }
+h2 { font-size: 20px; line-height: normal; }
+a { color: #0099ef; text-decoration: underline; }
+del { text-decoration: line-through; }
+
+code {
+  padding: 2px 5px;
+  font-family: "Courier New", Courier, monospace;
+  color: #3632ad;
+  background-color: #fafaff;
+  border: 1px solid #c6c4f4;
+  border-radius: 4px;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  font-family: "Verdana", sans-serif;
+  text-align: center;
+}
+
+.avatar-container { text-align: center; }
+.avatar { border-radius: 50%; }
+
+/* меню для страницы "о себе" */
+.blog-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 0 -30px 30px -30px;
+  padding: 15px 30px;
+  color: #ffffff;
+  background-color: #4470c4;
+  border-bottom: 5px solid #2d508f;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+}
+.blog-navigation a { color: #ffffff; margin: 0 8px; }
+
+.report-meta {
+  padding: 10px 15px;
+  color: #444444;
+  background-color: #f4f4f4;
+  border-left: 4px solid #4470c4;
+}
+
+.links-list { padding-left: 0; list-style: none; }
+.links-list li { margin-bottom: 8px; }
+
+footer {
+  margin-top: 30px;
+  padding-top: 10px;
+  color: #aaaaaa;
+  border-top: 1px solid #aaaaaa;
+}
+
+/* отчёт */
+
+body.report {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14pt;
+  line-height: 1.4;
+  color: #000000;
+  background: #eef2f9;
+  margin: 0;
+}
+
+/* "липкая шапка" */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #eef2f9;
+}
+
+.print-header {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #eef2f9;
+}
+
+.print-button {
+  display: inline-block;
+  padding: 6px 20px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #4470c4;
+  border: 2px solid #2d508f;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.print-button:hover { background-color: #2d508f; }
+
+body.report .blog-navigation {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* титульный лист */
+.title-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 21cm;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2cm 1cm 0 2cm;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.tp-header p { margin: 0 0 5px; font-size: 14pt; }
+.tp-department {
+  margin-top: 40px;
+  font-size: 12pt;
+  letter-spacing: 1px;
+}
+
+.tp-title { margin-top: 100px; font-size: 14pt; }
+
+.tp-authors {
+  margin-top: 100px;
+  text-align: left;
+}
+.tp-authors table { 
+  border-collapse: collapse; 
+  font-size: 14pt; 
+  margin: 0;
+}
+.tp-authors td { padding: 0 5px 2px 0; vertical-align: top; }
+.tp-authors td:first-child { width: 130px; }
+
+.tp-city {
+  margin-top: auto;
+  padding-bottom: 1cm;
+  font-size: 14pt;
+}
+
+/* основная часть */
+.report-body {
+  max-width: 21cm;
+  margin: 0 auto;
+  padding: 1cm 1cm 2cm 2cm;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.report-body h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+.report-body h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+.report-body p {
+  margin-bottom: 10px;
+  text-align: justify;
+  text-indent: 1.25cm;
+}
+.report-body ul { margin-bottom: 15px; padding-left: 40px; }
+
+.report-figure { margin: 20px 0; text-align: center; }
+.report-figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.report-figure figcaption {
+  margin-top: 5px;
+  font-size: 12pt;
+  font-style: italic;
+}
+
+/* печать отчёта */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0.5cm 0.5cm 0.5cm 2cm;
+  }
+
+  body.report {
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .no-print { display: none !important; }
+
+  .title-page {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    page-break-after: always;
+    height: 100vh;
+  }
+  
+  .tp-department { margin-top: 40px; }
+  .tp-title { margin-top: 120px; }
+  .tp-authors { margin-top: 100px; }
+  .tp-city { margin-top: auto; padding-bottom: 0; }
+
+  .report-body {
+    page-break-before: always;
+    padding: 0;
+    max-width: none;
+    margin: 0;
+  }
+  .report-body a {
+    color: #000000;
+    text-decoration: none;
+  }
+  .report-figure { page-break-inside: avoid; }
+}
